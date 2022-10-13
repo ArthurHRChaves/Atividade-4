@@ -1,0 +1,154 @@
+//Questão 01
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner Entrada;
+    Entrada = new Scanner(System.in);
+    // questão 1- a
+    System.out.println(dobro());
+    System.out.println("-----------------------------------");
+    // questao b
+    System.out.println(maior());
+    System.out.println("-----------------------------------");
+    // questao c
+    int numero1, numero2, numero3;
+    System.out.println("Programa para calcular média aritmética");
+    System.out.println("Informe o primeiro numero");
+    numero1 = Entrada.nextInt();
+    System.out.println("Informe o segundo numero");
+    numero2 = Entrada.nextInt();
+    System.out.println("Informe o terceiro numero");
+    numero3 = Entrada.nextInt();
+    System.out.println("A média aritmética desses três números é " + media(numero1, numero2, numero3));
+    System.out.println("-----------------------------------");
+    // questao d
+    System.out.println("Informe um numero que você gostaria de saber o fatorial");
+    int numeroFatorial = Entrada.nextInt();
+    System.out.println("O numero informado fatorado é " + fatorial(numeroFatorial));
+    System.out.println("-----------------------------------");
+    // questão e
+    System.out.print(
+        "Informe um número inteiro e positivo para que retorne a soma dos elementos inteiros existentes entre 1 e o número");
+    System.out.println("Informe o numero: ");
+    int Numero1 = Entrada.nextInt();
+    if (Numero1 >= 0) {
+      System.out.println("A sua resposta é " + SomaDosElementos(Numero1));
+    } else {
+      System.out.println("Não é possivel realizar essa operação com numeros negativos. ");
+    }
+  }
+
+  // função a
+  public static int dobro() {
+    Scanner Entrada;
+    Entrada = new Scanner(System.in);
+    System.out.println("Informe um numero para descobrir o seu dobro: ");
+    int numero = Entrada.nextInt();
+    int dobro = numero * 2;
+    System.out.println("O dobro do numero informado é " + dobro);
+    return dobro;
+  }
+
+  // função b
+  public static int maior() {
+    Scanner Entrada;
+    Entrada = new Scanner(System.in);
+    System.out.println("Informe o primeiro numero");
+    int numero1 = Entrada.nextInt();
+    System.out.println("Informe o segundo numero");
+    int numero2 = Entrada.nextInt();
+    int maior;
+    if (numero1 > numero2) {
+      maior = numero1;
+      System.out.println("O maior numero é " + numero1);
+    } else {
+      maior = numero2;
+      System.out.println("O maior numero é " + numero2);
+    }
+    return maior;
+  }
+
+  // função c
+  public static int media(int n1, int n2, int n3) {
+    int media = (n1 + n2 + n3) / 3;
+    return media;
+  }
+
+  // função d
+  public static int fatorial(int n1) {
+    int fatorado = 1;
+    for (int i = n1; i >= 1; i--) {
+      fatorado = i * fatorado;
+    }
+    return fatorado;
+  }
+
+  // função e
+  public static int SomaDosElementos(int n1) {
+    int soma = 0;
+    for (int i = 1; i <= n1; i++) {
+      soma = i + soma;
+    }
+    return soma;
+  }
+}
+
+
+
+//Questão 2
+import java.util.*;
+
+class Ex2 {
+  public static void main(String[] args) {
+    Scanner Entrada;
+    Entrada = new Scanner(System.in);
+    System.out.println("-------------------------------------------------------------------");
+    System.out.println("Programa que receba dois números inteiros e implmentar sub-rotinas:");
+    System.out.println("Informe o primeiro numero");
+    int numero1 = Entrada.nextInt();
+    System.out.println("Informe o segundo numero");
+    int numero2 = Entrada.nextInt();
+    System.out.println("-------------------------------------------------------------------");
+    System.out.println("1  -  soma(int a , int b): retorna a soma de a com b");
+    System.out.println("2  -  subtracao(int a, int b): retorna a diferença entre a e b");
+    System.out.println("3  -  multiplicacao(int a, int b): retorna a multiplicação de a por b");
+    System.out.println("Informe o numero referente a sua sub-rotina: ");
+    int opcao = Entrada.nextInt();
+    System.out.println("-------------------------------------------------------------------");
+    switch (opcao) {
+      case 1:
+        System.out.println("A soma dos numeros informados é " + soma(numero1, numero2));
+        break;
+      case 2:
+        System.out.println("A subtração dos numeros informados é " + subtracao(numero1, numero2));
+        break;
+      case 3:
+        System.out.println("A multiplicação dos numeros informados é " + multiplicacao(numero1, numero2));
+        break;
+
+    }
+  }
+
+  // Função Sub-Rotina A:
+  public static int soma(int n1, int n2) {
+    int soma = n1 + n2;
+    return soma;
+  }
+
+  // Função Sub-Rotina B:
+  public static int subtracao(int n1, int n2) {
+    int subtracao = n1 - n2;
+    return subtracao;
+  }
+
+  // Função Sub-Rotina C:
+  public static int multiplicacao(int n1, int n2) {
+    int multi = 0;
+    for (int i = 0; i < n2; i++) {
+      multi = multi + n1;
+    }
+    return multi;
+  }
+
+}
